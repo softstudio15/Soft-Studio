@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Soft Studio</title>
+  <style>
+    :root{
+      --bg:#fafafa; --dark:#1d1d1d; --accent:#ff6f7d; --muted:#6b6b6b;
+      --card:#ffffff; --radius:12px;
+      --max-width:1200px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#222;line-height:1.4}
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 1rem}
+
+    header{background:var(--dark);color:#fff}
+    .top{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+    .brand{display:flex;align-items:center;gap:.75rem;font-weight:700;font-size:1.15rem}
+    .brand svg{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#ffd1d6);padding:6px}
+    nav a{color:#fff;text-decoration:none;margin-left:18px;font-weight:500}
+
+    .hero{background:linear-gradient(135deg,#ffefeF,#fff1f1);padding:3.25rem 0;text-align:center}
+    .hero h1{margin:0;font-size:2rem}
+    .hero p{margin:.5rem 0 0;color:var(--muted)}
+
+    .products{padding:2rem 0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+    .card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 18px rgba(20,20,20,0.06);display:flex;flex-direction:column}
+    .card .media{height:220px;background-size:cover;background-position:center}
+    .card .body{padding:1rem;flex:1;display:flex;flex-direction:column}
+    .meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+
+    .price{font-weight:700;color:#222}
+    .btn{display:inline-block;padding:.55rem .9rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+
+    footer{padding:2rem 0;color:var(--muted);text-align:center}
+
+    /* Small responsive tweaks */
+    @media (max-width:600px){
+      .brand{font-size:1rem}
+      .hero{padding:2rem 1rem}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container top">
+      <div class="brand" aria-label="Soft Studio">
+        <!-- Inline SVG logo (no external requests) -->
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
+          <rect width="64" height="64" rx="10" fill="#ff6f7d" />
+          <g transform="translate(8,8)" fill="#fff">
+            <path d="M6 6h8v4H6z" opacity="0.9"/>
+            <circle cx="20" cy="18" r="6" opacity="0.95"/>
+          </g>
+        </svg>
+        <span>Soft Studio</span>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#arrivals">New Arrivals</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <h1>Fashion that feels as good as it looks</h1>
+        <p>Soft, sustainable, and timeless pieces — handcrafted with care.</p>
+      </div>
+    </section>
+
+    <section id="shop" class="products">
+      <div class="container">
+        <h2 style="margin:0 0 1rem">Featured Products</h2>
+        <div class="grid" role="list">
+
+          <article class="card" role="listitem">
+            <div class="media" style="background-image:url('https://via.placeholder.com/600x400?text=Soft+Knit+Sweater');" aria-hidden="true"></div>
+            <div class="body">
+              <h3 style="margin:.25rem 0">Soft Knit Sweater</h3>
+              <p style="margin:.4rem 0;color:var(--muted)">Cozy knit made from breathable fibers.</p>
+              <div class="meta">
+                <span class="price">$45</span>
+                <!-- Pure HTML/CSS: Buttons are links (no JS) -->
+                <a class="btn" href="#">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="media" style="background-image:url('https://via.placeholder.com/600x400?text=Classic+Women+Top');" aria-hidden="true"></div>
+            <div class="body">
+              <h3 style="margin:.25rem 0">Classic Women Top</h3>
+              <p style="margin:.4rem 0;color:var(--muted)">Versatile top for day-to-night wear.</p>
+              <div class="meta">
+                <span class="price">$32</span>
+                <a class="btn" href="#">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="media" style="background-image:url('https://via.placeholder.com/600x400?text=Elegant+Linen+Dress');" aria-hidden="true"></div>
+            <div class="body">
+              <h3 style="margin:.25rem 0">Elegant Linen Dress</h3>
+              <p style="margin:.4rem 0;color:var(--muted)">Lightweight dress, perfect for warm days.</p>
+              <div class="meta">
+                <span class="price">$58</span>
+                <a class="btn" href="#">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="media" style="background-image:url('https://via.placeholder.com/600x400?text=Modern+Denim+Jacket');" aria-hidden="true"></div>
+            <div class="body">
+              <h3 style="margin:.25rem 0">Modern Denim Jacket</h3>
+              <p style="margin:.4rem 0;color:var(--muted)">Classic cut with contemporary details.</p>
+              <div class="meta">
+                <span class="price">$67</span>
+                <a class="btn" href="#">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="arrivals" class="container" style="padding:1.5rem 0">
+      <h2 style="margin:0 0 .75rem">New Arrivals</h2>
+      <p style="margin:0;color:var(--muted)">Check back often — new pieces added seasonally.</p>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="container">
+      <p style="margin:0 0 .5rem">© Soft Studio — All rights reserved</p>
+      <p style="margin:0;color:var(--muted)">Email: hello@softstudio.example</p>
+    </div>
+  </footer>
+</body>
+</html>
